@@ -1,4 +1,4 @@
-#incdde <stdio.h>
+#include <stdio.h>
 
 /**
  * main - entry point
