@@ -21,12 +21,12 @@ void jack_bauer(void)
 			hl = h % 10;
 			mf = m / 10;
 			ml = m % 10;
-			putchar('0' + hf);
-			putchar('0' + hl);
-			putchar(':');
-			putchar('0' + mf);
-			putchar('0' + ml);
-			putchar('\n');
+			_putchar('0' + hf);
+			_putchar('0' + hl);
+			_putchar(':');
+			_putchar('0' + mf);
+			_putchar('0' + ml);
+			_putchar('\n');
 		}
 	}
 }
