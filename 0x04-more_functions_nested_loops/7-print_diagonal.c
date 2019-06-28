@@ -3,18 +3,31 @@
  * print_diagonal - entry point
  * @n: variables for the integer
  *
- * Description: finding absolute value
+ * Description: print diagonal
  * Return: 0
  */
 void print_diagonal(int n)
 {
-	for (; n > 0; n--)
+	int a;
+	int b;
+
+	if (n > 0)
 	{
-		if (n > 0)
+		for (a = 0; a < n; a++)
 		{
-			_putchar(' ');
+			for (b = 0; b <= a; b++)
+			{
+				if (b > 0)
+				{
+					_putchar(' ');
+				}
+			}
+			_putchar('\\');
+			_putchar('\n');
 		}
 	}
-	_putchar('\\');
-	_putchar('\n');
+	else
+	{
+		_putchar('\n');
+	}
 }
