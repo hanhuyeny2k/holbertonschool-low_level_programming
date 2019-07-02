@@ -5,7 +5,6 @@
  * @b: parameter of a digit
  *
  * Description: swap integers
- * Return: 0
  */
 void swap_int(int *a, int *b)
 {
