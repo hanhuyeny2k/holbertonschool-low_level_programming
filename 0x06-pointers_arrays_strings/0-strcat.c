@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
  * _strcat - entry point
- * @i: declaring a variable
- * @j: declaring a variable
+ * @dest: pointer
+ * @src: pointer
  *
  * Description: concatenates two strings
  * Return: the result of string dest
