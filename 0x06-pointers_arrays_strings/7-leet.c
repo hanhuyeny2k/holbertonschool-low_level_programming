@@ -3,7 +3,7 @@
  * leet - entry point
  * @s: pointer
  *
- * Description: replacing a & A, e & E, o & O, t & T, l & L with 4, 3, 0, 7, 1, respectively. 
+ * Description: replacing letters with numbers
  * Return: s
  */
 char *leet(char *s)
