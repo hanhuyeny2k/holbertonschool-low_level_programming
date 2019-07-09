@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * _strchr - entry point
- * @s: pointer to an arryay
+ * @s: pointer to an array
  * @c: assigned character
  *
  * Description: locates a character in a string
@@ -9,12 +9,12 @@
  */
 char *_strchr(char *s, char c)
 {
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
+	for (;; s++)
 	{
-		if (s[i] == c)
-			return (s + i);
+		if (*s == c)
+			return (s);
+		if (!*s)
+			return ('\0');
 	}
-	return (0);
+	return ('\0');
 }
