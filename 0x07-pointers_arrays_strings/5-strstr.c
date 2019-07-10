@@ -1,23 +1,23 @@
 #include "holberton.h"
 /**
- * _strpbrk - entry point
- * @s: pointer
- * @accept: pointer
+ * _strstr - entry point
+ * @haystack: pointer
+ * @needle: pointer
  *
- * Description: search a string for any of a set of bytes
- * Return: a pointer s or null
+ * Description: locates a substring
+ * Return: null
  */
-char *_strpbrk(char *s, char *accept)
+char *_strstr(char *haystack, char *needle)
 {
 	int i;
 	int j;
 
-	for (i = 0; accept[i] != '\0'; i++)
+	for (i = 0; needle[i] != '\0'; i++)
 	{
-		for (j = 0; s[j] != '\0'; j++)
+		for (j = 0; haystack[j] != '\0'; j++)
 		{
-			if (accept[i] == s[j])
-			return (s + j);
+			if (needle[i] == haystack[j])
+			return (haystack + j);
 		}
 	}
 	return ('\0');
