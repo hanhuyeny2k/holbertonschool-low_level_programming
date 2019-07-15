@@ -1,0 +1,1 @@
+The goal of this project is to learn how to write a program that prints its name; able to  print the number of arguments passed into it; able to print all arguments it receives; able to multiplie two numbers and adds positive numbers.
