@@ -1,13 +1,12 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * m - stores 3 int in a new allocated space in memory and prints the sum
- * @n0: integer to store and print
- * @n1: integer to store and print
- * @n2: integer to store and print
+ * create_array - main entry
+ * @c: value to save in the array
+ * @size: how long is the array
  *
  *Description: create an array and initialize it with a specific char
- * Return: nothing
+ * Return: pointer
  */
 char *create_array(unsigned int size, char c)
 {
