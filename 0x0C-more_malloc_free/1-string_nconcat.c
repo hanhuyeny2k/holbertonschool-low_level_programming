@@ -23,14 +23,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; s1[i] != '\0'; i++)
 		;
 	for (j = 0; s2[j] != '\0'; j++)
-		;
-		if (n > j || n == j)
-		{
-			n = j;
-			sum = (i + n);
-		}
-		else
-			sum = (i + n);
+		sum = (i + n);
 	a = malloc(sizeof(char) * (sum + 1));
 		if (a == NULL)
 			return (NULL);
