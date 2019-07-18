@@ -1,0 +1,1 @@
+The goal of this project is be able to write a function that allocates memory using malloc; write a function that concatenates two strings; write a function that allocates memory for an array; write a function that creates an array of integers.
