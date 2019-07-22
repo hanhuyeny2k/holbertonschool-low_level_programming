@@ -1,0 +1,1 @@
+The goals of this project are define a new type struct dog with element char *name, float age, char * owner; write a function that initialize a variable of type struct dog; write a function that prints a struct dog; define a new type dog_t as a new name for the type struct dog; write a function that creates a new dog; write a function that frees dog.
