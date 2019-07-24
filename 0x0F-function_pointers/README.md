@@ -1,0 +1,1 @@
+The goals for this project are using function pointers to write a function that prints a name; that excecutes a function given as a parameter on each element of an array; that searches for an integer; that performs simple operations. 
