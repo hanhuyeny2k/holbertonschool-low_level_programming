@@ -1,6 +1,12 @@
 #ifndef VARIADIC_FUNCTIONS_H
 #define VARIADIC_FUNCTIONS_H
 #include <stdarg.h>
+/**
+  *struct helper - helper profile
+  *@op: pointer to strings
+  *@f: function pointer
+  *
+  */
 typedef struct helper
 {
 	char *op;
