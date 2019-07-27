@@ -1,0 +1,1 @@
+The goals of this project is learn how to write a function that returns the sum of all its parameters; write a function that prints numbers, followed by a new line; write a function that prints strings, followed by a new line; write a function that prints anything, all using variadic functions.  
