@@ -15,16 +15,16 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list strings;
 
 	va_start(strings, n);
-	if (separator == NULL)
-		separator = "";
 	for (i = 0; i < n; i++)
 	{
 		combo_strings = va_arg(strings, char*);
+		if (strings == NULL)
+			printf("(nill)");
+		else if (separator == NULL)
+			separator = "";
 		printf("%s", combo_strings);
 		if (1 + i != n)
 			printf("%s", separator);
-		else if (strings == NULL)
-			printf("(nill)");
 	}
 	printf("\n");
 	va_end(strings);
