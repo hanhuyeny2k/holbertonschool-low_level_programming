@@ -1,5 +1,6 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
+#include <stdio.h>
 /**
  * sum_them_all - main entry, use this function to print
  * @n: given a list
