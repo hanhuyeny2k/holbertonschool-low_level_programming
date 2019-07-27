@@ -23,7 +23,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		printf("%s", combo_strings);
 		if (1 + i != n)
 			printf("%s", separator);
-		else if (strings == 0)
+		else if (strings == NULL)
 			printf("(nill)");
 	}
 	printf("\n");
