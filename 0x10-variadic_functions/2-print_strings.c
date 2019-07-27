@@ -19,7 +19,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		combo_strings = va_arg(strings, char*);
 		if (strings == NULL)
-			printf("(nill)");
+			printf("(nil)");
 		else if (separator == NULL)
 			separator = "";
 		printf("%s", combo_strings);
