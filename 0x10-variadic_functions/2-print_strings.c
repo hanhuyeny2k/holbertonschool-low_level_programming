@@ -20,10 +20,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		combo_strings = va_arg(strings, char*);
 		if (strings == NULL)
 			printf("(nil)");
-		else if (separator == NULL)
-			separator = "";
 		printf("%s", combo_strings);
-		if (1 + i != n)
+		if (1 + i != n && separator)
 			printf("%s", separator);
 	}
 	printf("\n");
