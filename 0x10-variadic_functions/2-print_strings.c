@@ -18,11 +18,11 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		combo_strings = va_arg(strings, char*);
-		if (strings == NULL)
+		if (combo_strings == NULL)
 			printf("(nil)");
 		printf("%s", combo_strings);
 		if (1 + i != n && separator)
-			printf("%s", separator);
+		printf("%s", separator);
 	}
 	printf("\n");
 	va_end(strings);
