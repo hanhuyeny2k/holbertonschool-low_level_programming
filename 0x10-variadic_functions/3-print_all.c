@@ -17,7 +17,7 @@ void helper_char(va_list a)
  */
 void helper_int(va_list b)
 {
-	printf("%d", va_arg(b, int));
+	printf("%i", va_arg(b, int));
 }
 /**
  * helper_float - main entry, helper function, use this function to print
@@ -65,7 +65,6 @@ void print_all(const char * const format, ...)
 
 	va_start(diff_form, format);
 	a = 0;
-	b = 0;
 	while (format[a] != '\0' && (format))
 	{
 		b = 0;
