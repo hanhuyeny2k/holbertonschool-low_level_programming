@@ -65,7 +65,7 @@ void print_all(const char * const format, ...)
 
 	va_start(diff_form, format);
 	a = 0;
-	while (format[a] != '\0' && (format))
+	while ((format) && format[a] != '\0')
 	{
 		b = 0;
 		while (all[b].op)
