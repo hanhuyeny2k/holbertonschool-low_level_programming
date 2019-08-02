@@ -19,7 +19,7 @@ size_t list_len(const list_t *h)
 		return (0);
 	for (; ptr != NULL; ptr = ptr->next)
 	{
-			counter++;
+		counter++;
 	}
 	return (counter);
 }
