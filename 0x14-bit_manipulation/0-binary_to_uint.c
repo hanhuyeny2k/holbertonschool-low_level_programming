@@ -33,6 +33,8 @@ unsigned int binary_to_uint(const char *b)
 
 	if (b == NULL)
 		return (0);
+	if (len == 0)
+		return (0);
 	for (i = len; i > 0; i--)
 	{
 		if (b[i - 1] == '1' || b[i - 1] == '0')
