@@ -29,10 +29,11 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int i;
 	unsigned int base = 1;
 	unsigned int total = 0;
-	int len = _strlen(b);
+	int len;
 
 	if (b == NULL)
 		return (0);
+	len = _strlen(b);
 	if (len == 0)
 		return (0);
 	for (i = len; i > 0; i--)
