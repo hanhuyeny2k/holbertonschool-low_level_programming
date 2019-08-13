@@ -4,7 +4,7 @@
  * @filename: name of a file
  * @text_content: pointer to a given string
  *
- * Return: the number of letter is printed
+ * Return: 1 on success or -1 on failure
  */
 
 int create_file(const char *filename, char *text_content)
