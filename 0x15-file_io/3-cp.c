@@ -24,7 +24,7 @@ void helper_count(int ac)
 {
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 }
@@ -44,7 +44,7 @@ int main(int ac, char **av)
 	fd = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", av[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
 	fe = open(av[1], O_RDWR);
@@ -68,7 +68,7 @@ int main(int ac, char **av)
 		wr = write(fd, buffer, 1024);
 		if (wr == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", av[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			helper_close(fd);
 			helper_close(fe);
 			exit(99);
