@@ -41,13 +41,13 @@ int main(int ac, char **av)
 	char buffer[1024];
 
 	helper_count(ac);
-	fd = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
+	fd = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	fe = open(av[1], O_RDWR);
+	fe = open(av[1], O_RDONLY);
 	if (fe == -1)
 	{
 		dprintf(STDERR_FILENO,
