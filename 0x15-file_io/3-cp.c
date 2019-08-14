@@ -65,7 +65,7 @@ int main(int ac, char **av)
 			helper_close(fd);
 			exit(98);
 		}
-		wr = write(fd, buffer, 1024);
+		wr = write(fd, buffer, rd);
 		if (wr == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
