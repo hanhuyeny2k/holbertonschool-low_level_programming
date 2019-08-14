@@ -57,14 +57,6 @@ int main(int ac, char **av)
 	}
 	while ((rd = read(fe, buffer, 1024)))
 	{
-		wr = write(fd, buffer, 1024);
-		if (wr == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", av[2]);
-			helper_close(fd);
-			helper_close(fe);
-			exit(99);
-		}
 		if (rd == -1)
 		{
 			dprintf(STDERR_FILENO,
@@ -72,6 +64,14 @@ int main(int ac, char **av)
 			helper_close(fe);
 			helper_close(fd);
 			exit(98);
+		}
+		wr = write(fd, buffer, 1024);
+		if (wr == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", av[2]);
+			helper_close(fd);
+			helper_close(fe);
+			exit(99);
 		}
 	}
 	helper_close(fd);
