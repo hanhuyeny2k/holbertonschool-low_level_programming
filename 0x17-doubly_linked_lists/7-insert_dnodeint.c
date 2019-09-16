@@ -36,17 +36,18 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (ptr == NULL)
 		return (NULL);
 	new = malloc(sizeof(dlistint_t));
+	{
+		if (new == NULL)
+			return (NULL);
+	}
 	if (new == NULL)
 		return (NULL);
-	printf("testing 1");
 	new->n = n;
 	store_next = ptr->next;
-	printf("testing 2");
 	ptr->next = new;
 	new->prev = ptr;
-	printf("testing 3");
 	new->next = store_next;
-	store_next->prev = new;
-	printf("testing 4");
+	if (store_next != NULL)
+		store_next->prev = new;
 	return (new);
 }
