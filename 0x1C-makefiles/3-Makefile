@@ -2,7 +2,7 @@ CC = gcc
 
 SRC = main.c holberton.c
 
-OBJ = main.o holberton.o
+OBJ = $(patsubst %.c, %.o, $(SRC))
 
 NAME = holberton
 
@@ -10,10 +10,6 @@ RM = rm -f
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-all1:
-	$(CC) $(SRC)
-	$(CC) $(SRC)
 
 clean:
 	$(RM) *.~ $(NAME)
