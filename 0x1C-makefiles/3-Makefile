@@ -4,8 +4,8 @@ OBJ = $(patsubst %.c, %.o, $(SRC))
 NAME = holberton
 RM = rm -f
 
-all: $(OBJ) $(SRC)
-	$(CC) $(OBJ) -o $(NAME)
+all: $(OBJ)
+	$(CC) $^ -o $(NAME)
 
 clean:
 	$(RM) *.~ $(NAME)
