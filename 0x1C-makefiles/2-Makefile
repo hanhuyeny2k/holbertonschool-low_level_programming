@@ -8,6 +8,3 @@ NAME = holberton
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-all1:
-	$(CC) $(SRC)
-	$(CC) $(SRC)
