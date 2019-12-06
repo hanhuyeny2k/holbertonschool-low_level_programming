@@ -24,49 +24,20 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 
 /**
- * binary_tree_depth - measures the depth of a node in a binary tree
- *@tree: binary_tree_t
- * Return: Widest point
+ * exp_power - find the power of 2
+ *@p: how many number is passing in
+ * Return: number
  */
-size_t binary_tree_depth(const binary_tree_t *tree)
+int exp_power(int p)
 {
-	int left = 0;
-	int right = 0;
+	int i = 0;
+	int number = 1;
 
-	if (tree == NULL)
-		return (0);
-
-	else
-	{
-		if (tree->parent)
-			left = binary_tree_depth(tree->parent) + 1;
-		if (tree->parent)
-			right = binary_tree_depth(tree->parent) + 1;
-		if (left > right)
-			return (left);
-		else
-			return (right);
-	}
+	for (i = 0; i < p; i++)
+		number = number * 2;
+	return (number);
 }
 
-/**
- * binary_tree_is_full - a function that checks if a binary tree is full
- *@tree: pointer to the root node of the tree to check
- *
- * Return: 0 if NULL or not full else return 1 if full
- */
-int binary_tree_is_full(const binary_tree_t *tree)
-{
-	if (tree == NULL)
-		return (0);
-	if (tree->left != NULL && tree->right != NULL)
-		return (binary_tree_is_full(tree->left)
-				&& binary_tree_is_full(tree->right));
-	if (tree->left == NULL && tree->right == NULL)
-		return (1);
-	else
-		return (0);
-}
 
 /**
  * binary_tree_is_perfect - a function that checks if a binary tree is perfect
@@ -76,20 +47,20 @@ int binary_tree_is_full(const binary_tree_t *tree)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
+	int leaf_node_left = 0;
+	int leaf_node_right = 0;
 	int height_left = 0;
 	int height_right = 0;
-	int full_left = 0;
-	int full_right = 0;
 
 	if (tree == NULL)
 		return (0);
 	height_left = binary_tree_height(tree->left);
 	height_right = binary_tree_height(tree->right);
-	full_left = binary_tree_is_full(tree->left);
-	full_right = binary_tree_is_full(tree->right);
+	leaf_node_left = exp_power(height_left + 1) - 1;
+	leaf_node_right = exp_power(height_right + 1) - 1;
 	if (tree->left == NULL && tree->right == NULL)
 		return (1);
-	if (height_left == height_right && full_left && full_right)
+	if (height_left == height_right && leaf_node_left == leaf_node_right)
 		return (1);
 	else
 		return (0);
