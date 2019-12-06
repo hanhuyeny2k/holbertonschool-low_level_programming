@@ -62,7 +62,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	full_left = binary_tree_is_full(tree->left);
 	full_right = binary_tree_is_full(tree->right);
 	if (tree->left == NULL && tree->right == NULL)
-		return (0);
+		return (1);
 	if (height_left == height_right && full_left == full_right)
 		return (1);
 	else
