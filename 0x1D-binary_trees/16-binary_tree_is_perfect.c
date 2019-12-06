@@ -24,6 +24,32 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 
 /**
+ * binary_tree_depth - measures the depth of a node in a binary tree
+ *@tree: binary_tree_t
+ * Return: Widest point
+ */
+size_t binary_tree_depth(const binary_tree_t *tree)
+{
+	int left = 0;
+	int right = 0;
+
+	if (tree == NULL)
+		return (0);
+
+	else
+	{
+		if (tree->parent)
+			left = binary_tree_depth(tree->parent) + 1;
+		if (tree->parent)
+			right = binary_tree_depth(tree->parent) + 1;
+		if (left > right)
+			return (left);
+		else
+			return (right);
+	}
+}
+
+/**
  * binary_tree_is_full - a function that checks if a binary tree is full
  *@tree: pointer to the root node of the tree to check
  *
@@ -54,6 +80,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	int height_right = 0;
 	int full_left = 0;
 	int full_right = 0;
+	int depth_left = 0;
+	int depth_right = 0;
 
 	if (tree == NULL)
 		return (0);
@@ -61,9 +89,12 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	height_right = binary_tree_height(tree->right);
 	full_left = binary_tree_is_full(tree->left);
 	full_right = binary_tree_is_full(tree->right);
+	depth_left = binary_tree_depth(tree->left);
+	depth_right = binary_tree_depth(tree->right);
 	if (tree->left == NULL && tree->right == NULL)
 		return (1);
-	if (height_left == height_right && full_left == full_right)
+	if (height_left == height_right && full_left == full_right
+		&& depth_left == depth_right)
 		return (1);
 	else
 		return (0);
