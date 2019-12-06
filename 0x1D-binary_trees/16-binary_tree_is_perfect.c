@@ -38,6 +38,21 @@ int exp_power(int p)
 	return (number);
 }
 
+/**
+ * binary_tree_size - measures the size of a binary tree
+ *@tree: binary_tree_t
+ *
+ * Return: 0
+ */
+size_t binary_tree_size(const binary_tree_t *tree)
+{
+	if (tree == NULL)
+		return (0);
+
+	else
+		return (binary_tree_size(tree->left) + 1
+				+ binary_tree_size(tree->right));
+}
 
 /**
  * binary_tree_is_perfect - a function that checks if a binary tree is perfect
@@ -47,21 +62,14 @@ int exp_power(int p)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int leaf_node_left = 0;
-	int leaf_node_right = 0;
-	int height_left = 0;
-	int height_right = 0;
+	size_t n;
+	size_t h;
+	size_t p;
 
 	if (tree == NULL)
 		return (0);
-	height_left = binary_tree_height(tree->left);
-	height_right = binary_tree_height(tree->right);
-	leaf_node_left = exp_power(height_left + 1) - 1;
-	leaf_node_right = exp_power(height_right + 1) - 1;
-	if (tree->left == NULL && tree->right == NULL)
-		return (1);
-	if (height_left == height_right && leaf_node_left == leaf_node_right)
-		return (1);
-	else
-		return (0);
+	n = binary_tree_size(tree);
+	h = binary_tree_height(tree);
+	p = exp_power(h + 1) - 1;
+	return (n == p);
 }
